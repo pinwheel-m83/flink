@@ -571,7 +571,7 @@ A. 그렇다. `Transformation` 리스트는 누적되고, `getStreamGraph()`는 
 |----------|------|
 | `getStreamGraph()` 내부 — `Transformation`을 어떻게 `StreamGraph` DAG로 변환하는가 | [`../03-graph-transformation/01-stream-graph.md`](../03-graph-transformation/01-stream-graph.md) |
 | `StreamGraph` → `JobGraph` (cluster 측 변환) | [`../03-graph-transformation/02-job-graph.md`](../03-graph-transformation/02-job-graph.md) |
-| `Dispatcher.submitJob` 이후 cluster 안에서 무슨 일이 | [`../04-runtime-architecture/`](../04-runtime-architecture/) (예정) |
+| `Dispatcher.submitJob` 이후 cluster 안에서 무슨 일이 | [`../04-runtime-architecture/`](../04-runtime-architecture/) |
 | K8s Operator와의 경계 상세 | [`../09-kubernetes-integration/operator-flink-boundary.md`](../09-kubernetes-integration/05-operator-flink-boundary.md) |
 | AdaptiveScheduler와 autoscaler 연동 | [`../10-scheduling-failover/adaptive-scheduler.md`](../10-scheduling-failover/01-adaptive-scheduler.md) |
 | Java 사전지식 (`CompletableFuture`, `ServiceLoader`, `ClassLoader`) 깊이 다루기 | [`../01-java-prerequisites/`](../01-java-prerequisites/) (예정) |

@@ -294,4 +294,4 @@ REST `/jobs/<id>/checkpoints/details/<chkId>` 응답의 `state_size_total`, `inc
 - RocksDB state backend 운영 깊이: [`./04-rocksdb-state-backend.md`](04-rocksdb-state-backend.md)
 - ForSt PoC 가이드 + production 비권장 근거: [`./05-forst-poc-guide.md`](05-forst-poc-guide.md)
 - State V2 async API: [`./06-state-v2-async-api.md`](06-state-v2-async-api.md)
-- FileSystem 추상 + S3 RecoverableWriter (체크포인트 저장 메커니즘): [`../07-filesystem-checkpoint-store/`](../07-filesystem-checkpoint-store/) (예정)
+- FileSystem 추상 + S3 RecoverableWriter (체크포인트 저장 메커니즘): [`../07-filesystem-checkpoint-store/`](../07-filesystem-checkpoint-store/)

@@ -401,5 +401,5 @@ A. `LibraryCacheManager`가 BLOB cache로부터 사용자 JAR을 가져와 `URLC
 
 - StreamTask 메인 루프 (mailbox 모델 — task 안에서 record 어떻게 처리): [`./05-stream-task-mailbox.md`](05-stream-task-mailbox.md)
 - RPC (Pekko Actor 모델): [`./06-rpc-pekko.md`](06-rpc-pekko.md)
-- IntermediateResultPartition의 데이터 송수신 (network shuffle): [`../11-network-shuffle/`](../11-network-shuffle/) (예정)
-- State 복구 시 LocalStateStores 활용: [`../05-state-checkpoint/`](../05-state-checkpoint/) (예정)
+- IntermediateResultPartition의 데이터 송수신 (network shuffle): [`../11-network-shuffle/`](../11-network-shuffle/)
+- State 복구 시 LocalStateStores 활용: [`../05-state-checkpoint/`](../05-state-checkpoint/)

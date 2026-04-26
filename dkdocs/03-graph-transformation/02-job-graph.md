@@ -336,7 +336,7 @@ public class IntermediateDataSet implements java.io.Serializable {
 
 Iceberg-Flink 통합(외부 레포 `apache/iceberg`)은 Sink V2 + GlobalCommitter 패턴을 사용하므로 보통 **Writer와 Committer가 분리된 vertex**가 된다 (committer는 parallelism=1로 강제되는 경우가 많음 → 다른 parallelism이라서 chainable 아님).
 
-이 분리는 의도된 것: writer는 N개 subtask가 병렬로 파일을 쓰지만, Iceberg 메타데이터 commit은 atomicity가 필요해 single-writer로 모인다. → 자세한 동작은 [`../06-source-sink-spi/sink-v2-iceberg-mapping.md`](../06-source-sink-spi/) (예정).
+이 분리는 의도된 것: writer는 N개 subtask가 병렬로 파일을 쓰지만, Iceberg 메타데이터 commit은 atomicity가 필요해 single-writer로 모인다. → 자세한 동작은 [`../06-source-sink-spi/04-iceberg-kafka-mapping.md`](../06-source-sink-spi/04-iceberg-kafka-mapping.md).
 
 ### 6.3 chaining을 명시적으로 끊고 싶을 때
 
@@ -428,5 +428,5 @@ A. Hybrid shuffle (FLIP-187, batch에서) 또는 사용자가 명시적으로 `B
 | `JobGraph` → `ExecutionGraph` (subtask 단위 펼치기, scheduling 시작) | [`./03-execution-graph.md`](03-execution-graph.md) |
 | `OperatorCoordinator` (Source/Sink V2 의 JM 측 컴포넌트) | [`../06-source-sink-spi/source-coordinator.md`](../06-source-sink-spi/02-source-coordinator.md) |
 | `StreamTask` 메인 루프 (chained operator를 어떻게 실행하는가) | [`../04-runtime-architecture/stream-task-mailbox.md`](../04-runtime-architecture/05-stream-task-mailbox.md) |
-| Slot sharing group / co-location 의 스케줄링 영향 | [`../10-scheduling-failover/`](../10-scheduling-failover/) (예정) |
+| Slot sharing group / co-location 의 스케줄링 영향 | [`../10-scheduling-failover/`](../10-scheduling-failover/) |
 | Operator chaining 설정 옵션 (전역 disable, optimizer 힌트) | (위 문서들과 함께 다룸) |

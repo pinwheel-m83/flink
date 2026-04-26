@@ -160,4 +160,4 @@ A. Sink V2의 `Committer`는 RecoverableWriter의 commit을 wrapping. checkpoint
 ## 8. 다음
 
 - S3 multipart upload 상세: [`./03-s3-multipart-upload.md`](./03-s3-multipart-upload.md)
-- Sink V2 Committer 와의 결합: [`../06-source-sink-spi/sink-committer.md`](../06-source-sink-spi/) (예정)
+- Sink V2 Committer 와의 결합: [`../06-source-sink-spi/03-sink-v2-overview.md`](../06-source-sink-spi/03-sink-v2-overview.md)

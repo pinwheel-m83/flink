@@ -205,4 +205,4 @@ A. async 미지원 SQL operator는 sync state → ForSt가 사실상 RocksDB처�
 ## 10. 다음에 읽을 문서
 
 - Changelog state backend: [`./07-changelog-state.md`](07-changelog-state.md)
-- FileSystem 추상 (ForSt가 사용하는 layer): [`../07-filesystem-checkpoint-store/`](../07-filesystem-checkpoint-store/) (예정)
+- FileSystem 추상 (ForSt가 사용하는 layer): [`../07-filesystem-checkpoint-store/`](../07-filesystem-checkpoint-store/)

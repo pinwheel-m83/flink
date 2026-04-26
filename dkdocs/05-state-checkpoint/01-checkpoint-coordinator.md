@@ -381,7 +381,7 @@ barrier alignment + notifyCheckpointComplete + Sink V2 2PC 조합으로:
 - 큰 state(10GB+) 잡도 체크포인트가 빠름
 - MinIO 비용도 stable
 
-자세한 동작은 [`./03-rocksdb-state-backend.md`](./) (예정).
+자세한 동작은 [`./04-rocksdb-state-backend.md`](./04-rocksdb-state-backend.md).
 
 ---
 
@@ -476,5 +476,5 @@ A. 2PC 패턴의 commit phase. Kafka offset commit, Iceberg metadata commit 등 
 - RocksDB state backend 운영 깊이: [`./04-rocksdb-state-backend.md`](04-rocksdb-state-backend.md)
 - ForSt PoC 가이드: [`./05-forst-poc-guide.md`](05-forst-poc-guide.md)
 - State V2 async API: [`./06-state-v2-async-api.md`](06-state-v2-async-api.md)
-- FileSystem 추상 + S3 RecoverableWriter: [`../07-filesystem-checkpoint-store/`](../07-filesystem-checkpoint-store/) (예정)
-- Sink V2 2PC commit (Iceberg 매핑): [`../06-source-sink-spi/two-phase-commit.md`](../06-source-sink-spi/) (예정)
+- FileSystem 추상 + S3 RecoverableWriter: [`../07-filesystem-checkpoint-store/`](../07-filesystem-checkpoint-store/)
+- Sink V2 2PC commit (Iceberg 매핑): [`../06-source-sink-spi/03-sink-v2-overview.md`](../06-source-sink-spi/03-sink-v2-overview.md)

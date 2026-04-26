@@ -322,4 +322,4 @@ A. `SPINNING_DISK_OPTIMIZED_HIGH_MEM` (HDD) 또는 `FLASH_SSD_OPTIMIZED` (SSD). 
 
 - ForSt PoC (cloud-native 미래): [`./05-forst-poc-guide.md`](05-forst-poc-guide.md)
 - State V2 async API (ForSt 활용 전제): [`./06-state-v2-async-api.md`](06-state-v2-async-api.md)
-- FileSystem 추상 + S3 multipart upload (체크포인트 영속화 메커니즘): [`../07-filesystem-checkpoint-store/`](../07-filesystem-checkpoint-store/) (예정)
+- FileSystem 추상 + S3 multipart upload (체크포인트 영속화 메커니즘): [`../07-filesystem-checkpoint-store/`](../07-filesystem-checkpoint-store/)

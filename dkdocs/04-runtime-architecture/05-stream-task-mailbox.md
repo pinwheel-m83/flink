@@ -126,7 +126,7 @@ public final void invoke() throws Exception {
 ```
 
 3단계:
-- **(a) `restoreInternal()`** — state 복구. 새 잡이면 빈 state, savepoint/checkpoint에서 시작이면 `OperatorChain`의 각 operator에 state 주입. 자세한 동작은 [`../05-state-checkpoint/`](../05-state-checkpoint/) (예정).
+- **(a) `restoreInternal()`** — state 복구. 새 잡이면 빈 state, savepoint/checkpoint에서 시작이면 `OperatorChain`의 각 operator에 state 주입. 자세한 동작은 [`../05-state-checkpoint/`](../05-state-checkpoint/).
 - **(c) `runMailboxLoop()`** — 본 문서의 메인.
 - **(d) `afterInvoke()`** — graceful shutdown — operator chain close, sink writer flush 등.
 
@@ -228,7 +228,7 @@ public class OperatorChain<...> implements ... {
 
 ### 5.7 Source task의 차이
 
-`SourceOperatorStreamTask`(FLIP-27 Source V2)는 `init()`에서 `SourceOperator`를 만들고 default action으로 `sourceOperator.emitNext(output)` 호출. SourceCoordinator(JM 측)에서 split을 받아 reader를 돌려 record를 emit. 자세한 동작은 [`../06-source-sink-spi/source-reader.md`](../06-source-sink-spi/) (예정).
+`SourceOperatorStreamTask`(FLIP-27 Source V2)는 `init()`에서 `SourceOperator`를 만들고 default action으로 `sourceOperator.emitNext(output)` 호출. SourceCoordinator(JM 측)에서 split을 받아 reader를 돌려 record를 emit. 자세한 동작은 [`../06-source-sink-spi/01-source-v2-overview.md`](../06-source-sink-spi/01-source-v2-overview.md).
 
 ---
 
@@ -329,5 +329,5 @@ A. `TwoInputStreamTask`의 default action이 `StreamTwoInputProcessor`를 통해
 
 - RPC (Pekko Actor 모델 — Dispatcher/RM/JM/TaskExecutor 모두의 토대): [`./06-rpc-pekko.md`](06-rpc-pekko.md)
 - CheckpointCoordinator → mailbox barrier inject (체크포인트 메커니즘): [`../05-state-checkpoint/checkpoint-coordinator.md`](../05-state-checkpoint/01-checkpoint-coordinator.md)
-- IntermediateResultPartition 데이터 송수신 (network shuffle): [`../11-network-shuffle/`](../11-network-shuffle/) (예정)
+- IntermediateResultPartition 데이터 송수신 (network shuffle): [`../11-network-shuffle/`](../11-network-shuffle/)
 - SourceOperatorStreamTask + SourceCoordinator: [`../06-source-sink-spi/source-coordinator.md`](../06-source-sink-spi/02-source-coordinator.md)

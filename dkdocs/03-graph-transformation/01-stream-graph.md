@@ -474,7 +474,7 @@ SinkTransformation                   (FLIP-191 Sink V2 → iceberg-flink)
 | Sink Writer | `OneInputStreamTask` | `ForwardPartitioner` | Iceberg 파일 쓰기 |
 | (선택) Committer | (별도 vertex) | — | 체크포인트 시 Iceberg 메타 commit |
 
-→ Source V2 / Sink V2 SPI 자체의 deep dive는 [`../06-source-sink-spi/`](../06-source-sink-spi/) (예정).
+→ Source V2 / Sink V2 SPI 자체의 deep dive는 [`../06-source-sink-spi/`](../06-source-sink-spi/).
 
 ### 6.2 `maxParallelism` ↔ AdaptiveScheduler ↔ key group
 

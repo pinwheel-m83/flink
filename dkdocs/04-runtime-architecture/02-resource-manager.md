@@ -462,4 +462,4 @@ A. 그렇다. `KubernetesApplicationClusterEntrypoint`가 ApplicationMode로 띄
 - TaskExecutor (slot 호스팅, task 실행): [`./04-task-executor.md`](04-task-executor.md)
 - StreamTask 메인 루프: [`./05-stream-task-mailbox.md`](05-stream-task-mailbox.md)
 - AdaptiveScheduler ↔ ResourceRequirements 자세히: [`../10-scheduling-failover/adaptive-scheduler.md`](../10-scheduling-failover/01-adaptive-scheduler.md)
-- K8s 통합 (Operator 경계, decorator, podTemplate): [`../09-kubernetes-integration/`](../09-kubernetes-integration/) (예정)
+- K8s 통합 (Operator 경계, decorator, podTemplate): [`../09-kubernetes-integration/`](../09-kubernetes-integration/)
