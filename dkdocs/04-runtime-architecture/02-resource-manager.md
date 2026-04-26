@@ -28,7 +28,7 @@
 
 ### 2.3 fabric8 Kubernetes Java Client
 
-K8s API와 통신하는 표준 Java 라이브러리. `KubernetesResourceManagerDriver`가 사용. Pod CRUD, Watch(=long-poll로 상태 변화 stream) 등 제공. 자세한 동작은 [`../09-kubernetes-integration/kubeclient-decorators.md`](../09-kubernetes-integration/) (예정).
+K8s API와 통신하는 표준 Java 라이브러리. `KubernetesResourceManagerDriver`가 사용. Pod CRUD, Watch(=long-poll로 상태 변화 stream) 등 제공. 자세한 동작은 [`../09-kubernetes-integration/kubeclient-decorators.md`](../09-kubernetes-integration/02-kubeclient-decorators.md).
 
 ---
 
@@ -395,7 +395,7 @@ Operator autoscaler 동작:
 - **Operator (외부 레포)**: `FlinkDeployment` CR의 `taskManager.podTemplate` 필드 — 사용자가 명시한 base.
 - **Flink 측 (`flink-kubernetes`)**: `taskManagerPodTemplate`을 베이스로 받고, 그 위에 TaskExecutor 컨테이너 args, 메모리/CPU spec, 환경 변수, ConfigMap volume mount 등을 데코레이터 패턴으로 덧붙임 → 최종 Pod spec.
 
-데코레이터 자세한 동작은 [`../09-kubernetes-integration/kubeclient-decorators.md`](../09-kubernetes-integration/) (예정).
+데코레이터 자세한 동작은 [`../09-kubernetes-integration/kubeclient-decorators.md`](../09-kubernetes-integration/02-kubeclient-decorators.md).
 
 ---
 
@@ -458,8 +458,8 @@ A. 그렇다. `KubernetesApplicationClusterEntrypoint`가 ApplicationMode로 띄
 
 ## 10. 다음에 읽을 문서
 
-- JobMaster (한 잡의 매니저 — RM과 협상): [`./03-job-master.md`](./) (예정)
-- TaskExecutor (slot 호스팅, task 실행): [`./04-task-executor.md`](./) (예정)
-- StreamTask 메인 루프: [`./05-stream-task-mailbox.md`](./) (예정)
-- AdaptiveScheduler ↔ ResourceRequirements 자세히: [`../10-scheduling-failover/adaptive-scheduler.md`](../10-scheduling-failover/) (예정)
+- JobMaster (한 잡의 매니저 — RM과 협상): [`./03-job-master.md`](03-job-master.md)
+- TaskExecutor (slot 호스팅, task 실행): [`./04-task-executor.md`](04-task-executor.md)
+- StreamTask 메인 루프: [`./05-stream-task-mailbox.md`](05-stream-task-mailbox.md)
+- AdaptiveScheduler ↔ ResourceRequirements 자세히: [`../10-scheduling-failover/adaptive-scheduler.md`](../10-scheduling-failover/01-adaptive-scheduler.md)
 - K8s 통합 (Operator 경계, decorator, podTemplate): [`../09-kubernetes-integration/`](../09-kubernetes-integration/) (예정)

@@ -425,8 +425,8 @@ A. Hybrid shuffle (FLIP-187, batch에서) 또는 사용자가 명시적으로 `B
 
 | 다음 단계 | 문서 |
 |----------|------|
-| `JobGraph` → `ExecutionGraph` (subtask 단위 펼치기, scheduling 시작) | [`./03-execution-graph.md`](./) (예정) |
-| `OperatorCoordinator` (Source/Sink V2 의 JM 측 컴포넌트) | [`../06-source-sink-spi/source-coordinator.md`](../06-source-sink-spi/) (예정) |
-| `StreamTask` 메인 루프 (chained operator를 어떻게 실행하는가) | [`../04-runtime-architecture/stream-task-mailbox.md`](../04-runtime-architecture/) (예정) |
+| `JobGraph` → `ExecutionGraph` (subtask 단위 펼치기, scheduling 시작) | [`./03-execution-graph.md`](03-execution-graph.md) |
+| `OperatorCoordinator` (Source/Sink V2 의 JM 측 컴포넌트) | [`../06-source-sink-spi/source-coordinator.md`](../06-source-sink-spi/02-source-coordinator.md) |
+| `StreamTask` 메인 루프 (chained operator를 어떻게 실행하는가) | [`../04-runtime-architecture/stream-task-mailbox.md`](../04-runtime-architecture/05-stream-task-mailbox.md) |
 | Slot sharing group / co-location 의 스케줄링 영향 | [`../10-scheduling-failover/`](../10-scheduling-failover/) (예정) |
 | Operator chaining 설정 옵션 (전역 disable, optimizer 힌트) | (위 문서들과 함께 다룸) |

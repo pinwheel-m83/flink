@@ -17,7 +17,7 @@
 
 ### 2.1 Pekko Actor 모델 (Flink RPC의 토대)
 
-`Dispatcher extends FencedRpcEndpoint<DispatcherId>` — `RpcEndpoint`는 Pekko(Akka의 fork) actor 위에 얹힌 Flink RPC 추상. 핵심 보장: **모든 RPC 콜백은 `MainThreadExecutor` 한 스레드에서만 실행**. 즉 actor mailbox 패턴 — 동시 RPC 요청이 와도 직렬화되어 처리되므로 `Dispatcher` 안의 mutable state(jobManagerRunnerRegistry 등)에 lock이 없다. 이 모델 자체는 [`./06-rpc-pekko.md`](./) (예정)에서 깊이 다룸.
+`Dispatcher extends FencedRpcEndpoint<DispatcherId>` — `RpcEndpoint`는 Pekko(Akka의 fork) actor 위에 얹힌 Flink RPC 추상. 핵심 보장: **모든 RPC 콜백은 `MainThreadExecutor` 한 스레드에서만 실행**. 즉 actor mailbox 패턴 — 동시 RPC 요청이 와도 직렬화되어 처리되므로 `Dispatcher` 안의 mutable state(jobManagerRunnerRegistry 등)에 lock이 없다. 이 모델 자체는 [`./06-rpc-pekko.md`](06-rpc-pekko.md)에서 깊이 다룸.
 
 ### 2.2 `FencedRpcEndpoint` (펜싱 토큰 기반 leader 보호)
 
@@ -157,7 +157,7 @@ private void persistAndRunJob(ExecutionPlan executionPlan) throws Exception {
 }
 ```
 
-**(a) `executionPlanWriter.putExecutionPlan`** — 본인 환경(K8s)에선 `KubernetesStateHandleStore`가 ConfigMap에 직렬화된 ExecutionPlan을 저장한다 → JM Pod이 죽어도 새 JM Pod이 이걸 읽어서 잡을 복구. 자세한 동작은 [`../09-kubernetes-integration/k8s-ha-leader-election.md`](../09-kubernetes-integration/) (예정).
+**(a) `executionPlanWriter.putExecutionPlan`** — 본인 환경(K8s)에선 `KubernetesStateHandleStore`가 ConfigMap에 직렬화된 ExecutionPlan을 저장한다 → JM Pod이 죽어도 새 JM Pod이 이걸 읽어서 잡을 복구. 자세한 동작은 [`../09-kubernetes-integration/k8s-ha-leader-election.md`](../09-kubernetes-integration/04-k8s-ha-leader-election.md).
 
 ### 5.4 `createJobMasterRunner` — JobMasterRunner 생성
 
@@ -180,7 +180,7 @@ private JobManagerRunner createJobMasterRunner(ExecutionPlan executionPlan) thro
     }
 ```
 
-`JobManagerRunner`는 `JobMaster`의 wrapper로 leader election + lifecycle 관리를 담당. JobMaster 자체는 [`./03-job-master.md`](./) (예정)에서 깊이 다룸.
+`JobManagerRunner`는 `JobMaster`의 wrapper로 leader election + lifecycle 관리를 담당. JobMaster 자체는 [`./03-job-master.md`](03-job-master.md)에서 깊이 다룸.
 
 ### 5.5 `runJob` — 실제 실행 시작
 
@@ -368,7 +368,7 @@ kubectl get configmap -n <flink-ns> | grep <cluster-id>
 A. **Dispatcher = 잡 접수처** (1 클러스터당 1개), **JobMaster = 잡 1개의 매니저** (JobMaster 인스턴스는 잡 수만큼 존재). Dispatcher가 잡 1개를 받을 때마다 JobMaster를 새로 spawn.
 
 **Q2. Dispatcher 자체의 leader election은 어떻게?**
-A. `DefaultDispatcherRunner`가 `LeaderElectionService`(K8s ConfigMap 또는 ZK)에 리더 후보로 등록. 리더가 되면 `StandaloneDispatcher`/`MiniDispatcher` 인스턴스를 만들어 활성화. 이 부분은 [`../09-kubernetes-integration/k8s-ha-leader-election.md`](../09-kubernetes-integration/) (예정).
+A. `DefaultDispatcherRunner`가 `LeaderElectionService`(K8s ConfigMap 또는 ZK)에 리더 후보로 등록. 리더가 되면 `StandaloneDispatcher`/`MiniDispatcher` 인스턴스를 만들어 활성화. 이 부분은 [`../09-kubernetes-integration/k8s-ha-leader-election.md`](../09-kubernetes-integration/04-k8s-ha-leader-election.md).
 
 **Q3. `submittedAndWaitingTerminationJobIDs`는 왜 필요?**
 A. 사용자가 같은 jobId로 두 번 submit하는 race를 막기 위함. 첫 번째가 cleanup 중인 사이에 두 번째가 들어오면 거부.
@@ -383,8 +383,8 @@ A. ApplicationMode의 경우 `ApplicationDispatcherBootstrap`가 `submitFailedJo
 
 ## 10. 다음에 읽을 문서
 
-- ResourceManager (slot 관리, K8s pod 요청): [`./02-resource-manager.md`](./) (예정)
-- JobMaster (한 잡의 매니저): [`./03-job-master.md`](./) (예정)
-- TaskExecutor (slot 호스팅, task 실행): [`./04-task-executor.md`](./) (예정)
-- StreamTask mailbox 모델 (각 subtask가 어떻게 record를 처리하는가): [`./05-stream-task-mailbox.md`](./) (예정)
-- RPC (Pekko 기반 actor): [`./06-rpc-pekko.md`](./) (예정)
+- ResourceManager (slot 관리, K8s pod 요청): [`./02-resource-manager.md`](02-resource-manager.md)
+- JobMaster (한 잡의 매니저): [`./03-job-master.md`](03-job-master.md)
+- TaskExecutor (slot 호스팅, task 실행): [`./04-task-executor.md`](04-task-executor.md)
+- StreamTask mailbox 모델 (각 subtask가 어떻게 record를 처리하는가): [`./05-stream-task-mailbox.md`](05-stream-task-mailbox.md)
+- RPC (Pekko 기반 actor): [`./06-rpc-pekko.md`](06-rpc-pekko.md)

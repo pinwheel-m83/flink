@@ -7,4 +7,6 @@
 
 | # | 문서 | 한 줄 |
 |---|------|------|
-| 01 | [`01-overview.md`](./01-overview.md) | ResultPartition + InputGate + LocalBufferPool + credit flow + backpressure 메커니즘 종합 |
+| 01 | [`01-overview.md`](./01-overview.md) | Netty 기반 데이터 채널 종합 (ResultPartition / InputGate / LocalBufferPool 개관) |
+| 02 | [`02-result-partition-input-gate.md`](./02-result-partition-input-gate.md) | Producer/Consumer 측 자료구조 (Local vs Remote channel) |
+| 03 | [`03-credit-based-flow.md`](./03-credit-based-flow.md) | Credit-based flow control + backpressure 디버깅 |

@@ -530,8 +530,8 @@ A. 아니. AdaptiveScheduler는 parallelism 변경 시 **새 ExecutionGraph를 �
 
 | 다음 단계 | 문서 |
 |----------|------|
-| Scheduler가 ExecutionGraph 위에서 어떻게 동작하는가 (slot 요청 → deploy) | [`../10-scheduling-failover/adaptive-scheduler.md`](../10-scheduling-failover/) (예정) |
-| TaskManager 측에서 `Execution`이 어떻게 `Task`로 살아나는가 | [`../04-runtime-architecture/task-executor.md`](../04-runtime-architecture/) (예정) |
-| `OperatorCoordinator` (Source/Sink V2의 JM 측 컴포넌트) | [`../06-source-sink-spi/source-coordinator.md`](../06-source-sink-spi/) (예정) |
-| Checkpoint 메커니즘이 ExecutionGraph 위에서 어떻게 시작되는가 | [`../05-state-checkpoint/checkpoint-coordinator.md`](../05-state-checkpoint/) (예정) |
+| Scheduler가 ExecutionGraph 위에서 어떻게 동작하는가 (slot 요청 → deploy) | [`../10-scheduling-failover/adaptive-scheduler.md`](../10-scheduling-failover/01-adaptive-scheduler.md) |
+| TaskManager 측에서 `Execution`이 어떻게 `Task`로 살아나는가 | [`../04-runtime-architecture/task-executor.md`](../04-runtime-architecture/04-task-executor.md) |
+| `OperatorCoordinator` (Source/Sink V2의 JM 측 컴포넌트) | [`../06-source-sink-spi/source-coordinator.md`](../06-source-sink-spi/02-source-coordinator.md) |
+| Checkpoint 메커니즘이 ExecutionGraph 위에서 어떻게 시작되는가 | [`../05-state-checkpoint/checkpoint-coordinator.md`](../05-state-checkpoint/01-checkpoint-coordinator.md) |
 | IntermediateResultPartition의 데이터가 실제로 어떻게 전송되는가 (network shuffle) | [`../11-network-shuffle/`](../11-network-shuffle/) (예정) |

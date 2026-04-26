@@ -301,7 +301,7 @@ A. 그래도 1~2년 더 기다리는 게 안전. mid-term 모니터링 필요. �
 
 ## 11. 다음에 읽을 문서
 
-- State V2 async API (ForSt 활용 전제): [`./06-state-v2-async-api.md`](./) (예정)
-- Changelog state backend (대안적 latency 단축): [`./07-changelog-state.md`](./) (예정)
+- State V2 async API (ForSt 활용 전제): [`./06-state-v2-async-api.md`](06-state-v2-async-api.md)
+- Changelog state backend (대안적 latency 단축): [`./07-changelog-state.md`](07-changelog-state.md)
 - FileSystem 추상 + S3 multipart (ForSt가 사용하는 layer): [`../07-filesystem-checkpoint-store/`](../07-filesystem-checkpoint-store/) (예정)
 - Source/Sink V2 SPI (Iceberg/Kafka 매핑): [`../06-source-sink-spi/`](../06-source-sink-spi/) (예정)

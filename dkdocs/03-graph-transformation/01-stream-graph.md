@@ -573,7 +573,7 @@ A. lambda를 `map`/`filter`에 넘겼을 때 Java 타입 erasure로 출력 타�
 A. 옛 `SourceFunction`/`SinkFunction` API(FLIP-27/FLIP-143 이전)용 transformation. 신규 코드는 `SourceTransformation`/`SinkTransformation`(V2)를 써야 한다. **본인 환경의 Kafka 커넥터(외부 레포 `apache/flink-connector-kafka`)는 V2 SourceTransformation을 사용**.
 
 **Q6. `JobGraph`는 언제 만들어지나? (다음 문서 미리보기)**
-A. `StreamGraph`까지가 client 측 작업. 클러스터로 제출되면 `Dispatcher`/`JobMaster`가 `StreamGraph` → `JobGraph` 변환을 수행한다 (operator chaining, JobVertex 통합 등). [`02-job-graph.md`](./) (예정)에서 다룸.
+A. `StreamGraph`까지가 client 측 작업. 클러스터로 제출되면 `Dispatcher`/`JobMaster`가 `StreamGraph` → `JobGraph` 변환을 수행한다 (operator chaining, JobVertex 통합 등). [`02-job-graph.md`](02-job-graph.md)에서 다룸.
 
 ---
 
@@ -581,9 +581,9 @@ A. `StreamGraph`까지가 client 측 작업. 클러스터로 제출되면 `Dispa
 
 | 다음 단계 | 문서 |
 |----------|------|
-| `StreamGraph` → `JobGraph` 변환 (operator chaining, JobVertex) | [`02-job-graph.md`](./) (예정) |
-| `JobGraph` → `ExecutionGraph` (parallelism × subtask 단위 펼치기) | [`03-execution-graph.md`](./) (예정) |
-| `StreamOperator` / `StreamOperatorFactory` 본체 | [`../04-runtime-architecture/stream-task-mailbox.md`](../04-runtime-architecture/) (예정) |
-| Source V2 (`SourceTransformation` ↔ `SourceCoordinator` ↔ Reader) | [`../06-source-sink-spi/source-v2-overview.md`](../06-source-sink-spi/) (예정) |
-| Sink V2 (`SinkTransformation` ↔ Committer ↔ Iceberg) | [`../06-source-sink-spi/sink-v2-overview.md`](../06-source-sink-spi/) (예정) |
-| `maxParallelism` ↔ AdaptiveScheduler ↔ key group | [`../10-scheduling-failover/adaptive-scheduler.md`](../10-scheduling-failover/) (예정) |
+| `StreamGraph` → `JobGraph` 변환 (operator chaining, JobVertex) | [`02-job-graph.md`](02-job-graph.md) |
+| `JobGraph` → `ExecutionGraph` (parallelism × subtask 단위 펼치기) | [`03-execution-graph.md`](03-execution-graph.md) |
+| `StreamOperator` / `StreamOperatorFactory` 본체 | [`../04-runtime-architecture/stream-task-mailbox.md`](../04-runtime-architecture/05-stream-task-mailbox.md) |
+| Source V2 (`SourceTransformation` ↔ `SourceCoordinator` ↔ Reader) | [`../06-source-sink-spi/source-v2-overview.md`](../06-source-sink-spi/01-source-v2-overview.md) |
+| Sink V2 (`SinkTransformation` ↔ Committer ↔ Iceberg) | [`../06-source-sink-spi/sink-v2-overview.md`](../06-source-sink-spi/03-sink-v2-overview.md) |
+| `maxParallelism` ↔ AdaptiveScheduler ↔ key group | [`../10-scheduling-failover/adaptive-scheduler.md`](../10-scheduling-failover/01-adaptive-scheduler.md) |

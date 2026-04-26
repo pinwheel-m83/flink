@@ -303,7 +303,7 @@ A. 한 체크포인트 안에서는 한 번 unaligned 전환되면 그 체크포
 
 ## 10. 다음에 읽을 문서
 
-- State backend 비교 (HashMap, RocksDB, ForSt): [`./03-state-backend-overview.md`](./) (예정)
-- RocksDB state backend (운영용): [`./04-rocksdb-state-backend.md`](./) (예정)
-- ForSt PoC 가이드: [`./05-forst-poc-guide.md`](./) (예정)
+- State backend 비교 (HashMap, RocksDB, ForSt): [`./03-state-backend-overview.md`](03-state-backend-overview.md)
+- RocksDB state backend (운영용): [`./04-rocksdb-state-backend.md`](04-rocksdb-state-backend.md)
+- ForSt PoC 가이드: [`./05-forst-poc-guide.md`](05-forst-poc-guide.md)
 - Network buffer + backpressure 메커니즘: [`../11-network-shuffle/`](../11-network-shuffle/) (예정)

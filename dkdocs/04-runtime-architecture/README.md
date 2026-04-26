@@ -33,6 +33,6 @@ StreamOperator ──── 실제 record processing
 | 01 | [`01-dispatcher.md`](./01-dispatcher.md) | Dispatcher — 잡 접수, JobMaster spawn |
 | 02 | [`02-resource-manager.md`](./02-resource-manager.md) | RM + SlotManager + KubernetesResourceManagerDriver |
 | 03 | [`03-job-master.md`](./03-job-master.md) | JobMaster — 잡 1개의 매니저 |
-| 04 | `04-task-executor.md` (예정) | TaskExecutor — slot 호스팅, Task 실행 |
-| 05 | `05-stream-task-mailbox.md` (예정) | StreamTask 메인 루프, mailbox 모델 |
-| 06 | `06-rpc-pekko.md` (예정) | Pekko Actor 기반 Flink RPC |
+| 04 | [`04-task-executor.md`](./04-task-executor.md) | TaskExecutor — slot 호스팅, Task 실행 |
+| 05 | [`05-stream-task-mailbox.md`](./05-stream-task-mailbox.md) | StreamTask 메인 루프, mailbox 모델 |
+| 06 | [`06-rpc-pekko.md`](./06-rpc-pekko.md) | Pekko Actor 기반 Flink RPC |

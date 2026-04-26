@@ -29,7 +29,7 @@ JobMaster는 스케줄링 정책을 직접 알지 않음 — `SchedulerNG` 추�
 - `DefaultScheduler`: 고정 parallelism, region-based failover
 - `AdaptiveScheduler`: 가변 parallelism, slot 변동에 적응
 
-본인 환경은 `AdaptiveScheduler`. 자세한 동작은 [`../10-scheduling-failover/adaptive-scheduler.md`](../10-scheduling-failover/) (예정).
+본인 환경은 `AdaptiveScheduler`. 자세한 동작은 [`../10-scheduling-failover/adaptive-scheduler.md`](../10-scheduling-failover/01-adaptive-scheduler.md).
 
 ---
 
@@ -349,7 +349,7 @@ A. JobMaster = 실제 잡 매니저 (잡 동안만 살아있음). JobManagerRunn
 A. 옛 JM은 fencing token이 무효화 → 모든 RPC 거부됨. graceful shutdown 시도 후 강제 종료. 새 JM이 옛 JM의 progress(체크포인트)에서 복구 시작.
 
 **Q3. CheckpointCoordinator는 어디 있나?**
-A. JobMaster의 `schedulerNG` 안에. 정확히는 `DefaultExecutionGraph.enableCheckpointing(...)` 시 ExecutionGraph 안에 생성됨 (`ExecutionGraph.getCheckpointCoordinator()`로 접근). JobMaster는 trigger RPC만 받아서 위임. 자세한 동작은 [`../05-state-checkpoint/checkpoint-coordinator.md`](../05-state-checkpoint/) (예정).
+A. JobMaster의 `schedulerNG` 안에. 정확히는 `DefaultExecutionGraph.enableCheckpointing(...)` 시 ExecutionGraph 안에 생성됨 (`ExecutionGraph.getCheckpointCoordinator()`로 접근). JobMaster는 trigger RPC만 받아서 위임. 자세한 동작은 [`../05-state-checkpoint/checkpoint-coordinator.md`](../05-state-checkpoint/01-checkpoint-coordinator.md).
 
 **Q4. JM이 RM 없이 동작 가능?**
 A. 불가. RM에 등록 못 하면 slot 받을 수 없음 → 어떤 task도 deploy 못 함. JobMaster는 시작 시 `ResourceManagerLeaderRetriever`로 RM leader 찾아 등록. RM도 leader change에 따라 재등록.
@@ -364,8 +364,8 @@ A. 동일한 `JobMaster` 클래스 사용. 차이는 위 ApplicationMode dispatc
 
 ## 10. 다음에 읽을 문서
 
-- TaskExecutor (slot 호스팅, 실제 task 실행): [`./04-task-executor.md`](./) (예정)
-- StreamTask 메인 루프 (mailbox 모델): [`./05-stream-task-mailbox.md`](./) (예정)
-- RPC (Pekko Actor 모델): [`./06-rpc-pekko.md`](./) (예정)
-- AdaptiveScheduler 본체: [`../10-scheduling-failover/adaptive-scheduler.md`](../10-scheduling-failover/) (예정)
-- CheckpointCoordinator: [`../05-state-checkpoint/checkpoint-coordinator.md`](../05-state-checkpoint/) (예정)
+- TaskExecutor (slot 호스팅, 실제 task 실행): [`./04-task-executor.md`](04-task-executor.md)
+- StreamTask 메인 루프 (mailbox 모델): [`./05-stream-task-mailbox.md`](05-stream-task-mailbox.md)
+- RPC (Pekko Actor 모델): [`./06-rpc-pekko.md`](06-rpc-pekko.md)
+- AdaptiveScheduler 본체: [`../10-scheduling-failover/adaptive-scheduler.md`](../10-scheduling-failover/01-adaptive-scheduler.md)
+- CheckpointCoordinator: [`../05-state-checkpoint/checkpoint-coordinator.md`](../05-state-checkpoint/01-checkpoint-coordinator.md)

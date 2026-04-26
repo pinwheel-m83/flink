@@ -21,8 +21,8 @@ ExecutionGraph           ← runtime 인스턴스. ExecutionVertex × parallelis
 | # | 문서 | 한 줄 요약 |
 |---|------|----------|
 | 01 | [`01-stream-graph.md`](./01-stream-graph.md) | `Transformation` 트리 → `StreamGraph` (StreamNode/StreamEdge) — client 측 |
-| 02 | `02-job-graph.md` (예정) | `StreamGraph` → `JobGraph` (operator chaining, JobVertex) |
-| 03 | `03-execution-graph.md` (예정) | `JobGraph` → `ExecutionGraph` (subtask 단위 펼치기) |
+| 02 | [`02-job-graph.md`](./02-job-graph.md) | `StreamGraph` → `JobGraph` (operator chaining, JobVertex) |
+| 03 | [`03-execution-graph.md`](./03-execution-graph.md) | `JobGraph` → `ExecutionGraph` (subtask 단위 펼치기) |
 
 ## 사전에 한 번 읽어둘 자료
 

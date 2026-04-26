@@ -125,7 +125,7 @@ public JobExecutionResult execute(String jobName) throws Exception {
     // ... (try/catch + retry 로직, 본 문서 범위 밖)
 ```
 
-> **`getStreamGraph()` 내부**는 `Transformation` 리스트를 `StreamGraphGenerator`로 돌려 `StreamGraph` DAG를 만든다. **이 변환의 상세는 [`03-graph-transformation/01-stream-graph.md`](../03-graph-transformation/) (예정)에서 다룬다.** 여기서는 "DataStream 빌드 결과 → `StreamGraph` 객체가 만들어진다"까지만 이해하면 된다.
+> **`getStreamGraph()` 내부**는 `Transformation` 리스트를 `StreamGraphGenerator`로 돌려 `StreamGraph` DAG를 만든다. **이 변환의 상세는 [`03-graph-transformation/01-stream-graph.md`](../03-graph-transformation/01-stream-graph.md)에서 다룬다.** 여기서는 "DataStream 빌드 결과 → `StreamGraph` 객체가 만들어진다"까지만 이해하면 된다.
 
 `StreamExecutionEnvironment.java:1870-1902` (실제 동작):
 
@@ -481,7 +481,7 @@ JobMaster 생성 → Slot 할당 → Task 배치
 - `KubernetesResourceManagerDriver` (TaskManager Pod 요청은 Operator가 주입한 RBAC로 K8s API 호출)
 - K8s ConfigMap 기반 leader election (`flink-kubernetes/.../highavailability/`)
 
-→ Operator의 자세한 동작은 [`../09-kubernetes-integration/operator-flink-boundary.md`](../09-kubernetes-integration/) (예정).
+→ Operator의 자세한 동작은 [`../09-kubernetes-integration/operator-flink-boundary.md`](../09-kubernetes-integration/05-operator-flink-boundary.md).
 
 ---
 
@@ -569,9 +569,9 @@ A. 그렇다. `Transformation` 리스트는 누적되고, `getStreamGraph()`는 
 
 | 다음 단계 | 문서 |
 |----------|------|
-| `getStreamGraph()` 내부 — `Transformation`을 어떻게 `StreamGraph` DAG로 변환하는가 | [`../03-graph-transformation/01-stream-graph.md`](../03-graph-transformation/) (예정) |
-| `StreamGraph` → `JobGraph` (cluster 측 변환) | [`../03-graph-transformation/02-job-graph.md`](../03-graph-transformation/) (예정) |
+| `getStreamGraph()` 내부 — `Transformation`을 어떻게 `StreamGraph` DAG로 변환하는가 | [`../03-graph-transformation/01-stream-graph.md`](../03-graph-transformation/01-stream-graph.md) |
+| `StreamGraph` → `JobGraph` (cluster 측 변환) | [`../03-graph-transformation/02-job-graph.md`](../03-graph-transformation/02-job-graph.md) |
 | `Dispatcher.submitJob` 이후 cluster 안에서 무슨 일이 | [`../04-runtime-architecture/`](../04-runtime-architecture/) (예정) |
-| K8s Operator와의 경계 상세 | [`../09-kubernetes-integration/operator-flink-boundary.md`](../09-kubernetes-integration/) (예정) |
-| AdaptiveScheduler와 autoscaler 연동 | [`../10-scheduling-failover/adaptive-scheduler.md`](../10-scheduling-failover/) (예정) |
+| K8s Operator와의 경계 상세 | [`../09-kubernetes-integration/operator-flink-boundary.md`](../09-kubernetes-integration/05-operator-flink-boundary.md) |
+| AdaptiveScheduler와 autoscaler 연동 | [`../10-scheduling-failover/adaptive-scheduler.md`](../10-scheduling-failover/01-adaptive-scheduler.md) |
 | Java 사전지식 (`CompletableFuture`, `ServiceLoader`, `ClassLoader`) 깊이 다루기 | [`../01-java-prerequisites/`](../01-java-prerequisites/) (예정) |

@@ -142,7 +142,7 @@ public class EmbeddedRocksDBStateBackend extends AbstractManagedMemoryStateBacke
 - **체크포인트**: **incremental 가능** — 새 SST 파일만 MinIO에 업로드
 - **권장**: 큰 state 잡, exactly-once 보장, 본인 환경 메인 ★
 
-자세한 동작은 [`./04-rocksdb-state-backend.md`](./) (예정).
+자세한 동작은 [`./04-rocksdb-state-backend.md`](04-rocksdb-state-backend.md).
 
 ### 5.3 `ForStStateBackend` — Disaggregated (🧪 Experimental)
 
@@ -162,7 +162,7 @@ public class ForStStateBackend extends AbstractManagedMemoryStateBackend
 - **단점**: ⚠ **Experimental** — production 권장 ❌ (Flink 2.4-SNAPSHOT 마스터 문서 명시), API 변경 가능성, SQL async state 미완성, 일부 operator만 async 지원
 - **권장**: PoC만 (본인 환경 결정사항)
 
-자세한 동작은 [`./05-forst-poc-guide.md`](./) (예정).
+자세한 동작은 [`./05-forst-poc-guide.md`](05-forst-poc-guide.md).
 
 ### 5.4 `ChangelogStateBackend` — Wrapping decorator
 
@@ -291,7 +291,7 @@ REST `/jobs/<id>/checkpoints/details/<chkId>` 응답의 `state_size_total`, `inc
 
 ## 10. 다음에 읽을 문서
 
-- RocksDB state backend 운영 깊이: [`./04-rocksdb-state-backend.md`](./) (예정)
-- ForSt PoC 가이드 + production 비권장 근거: [`./05-forst-poc-guide.md`](./) (예정)
-- State V2 async API: [`./06-state-v2-async-api.md`](./) (예정)
+- RocksDB state backend 운영 깊이: [`./04-rocksdb-state-backend.md`](04-rocksdb-state-backend.md)
+- ForSt PoC 가이드 + production 비권장 근거: [`./05-forst-poc-guide.md`](05-forst-poc-guide.md)
+- State V2 async API: [`./06-state-v2-async-api.md`](06-state-v2-async-api.md)
 - FileSystem 추상 + S3 RecoverableWriter (체크포인트 저장 메커니즘): [`../07-filesystem-checkpoint-store/`](../07-filesystem-checkpoint-store/) (예정)

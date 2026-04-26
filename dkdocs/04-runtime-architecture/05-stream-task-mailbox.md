@@ -327,7 +327,7 @@ A. `TwoInputStreamTask`의 default action이 `StreamTwoInputProcessor`를 통해
 
 ## 10. 다음에 읽을 문서
 
-- RPC (Pekko Actor 모델 — Dispatcher/RM/JM/TaskExecutor 모두의 토대): [`./06-rpc-pekko.md`](./) (예정)
-- CheckpointCoordinator → mailbox barrier inject (체크포인트 메커니즘): [`../05-state-checkpoint/checkpoint-coordinator.md`](../05-state-checkpoint/) (예정)
+- RPC (Pekko Actor 모델 — Dispatcher/RM/JM/TaskExecutor 모두의 토대): [`./06-rpc-pekko.md`](06-rpc-pekko.md)
+- CheckpointCoordinator → mailbox barrier inject (체크포인트 메커니즘): [`../05-state-checkpoint/checkpoint-coordinator.md`](../05-state-checkpoint/01-checkpoint-coordinator.md)
 - IntermediateResultPartition 데이터 송수신 (network shuffle): [`../11-network-shuffle/`](../11-network-shuffle/) (예정)
-- SourceOperatorStreamTask + SourceCoordinator: [`../06-source-sink-spi/source-coordinator.md`](../06-source-sink-spi/) (예정)
+- SourceOperatorStreamTask + SourceCoordinator: [`../06-source-sink-spi/source-coordinator.md`](../06-source-sink-spi/02-source-coordinator.md)

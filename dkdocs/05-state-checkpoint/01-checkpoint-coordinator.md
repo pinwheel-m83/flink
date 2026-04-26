@@ -455,7 +455,7 @@ A. Coordinator가 fail한 PendingCheckpoint를 abort + cleanup (state file 삭�
 A. `CheckpointIDCounter`(HA 저장소)에서 마지막 ID 읽어 이어감. `CompletedCheckpointStore`에서 마지막 completed 메타 읽음 → 잡 복구.
 
 **Q5. unaligned checkpoint란?**
-A. backpressure 시 input의 buffer가 차서 alignment에 오래 걸리는 문제 해결 — barrier가 채널의 buffer를 "추월"해 즉시 forward, 미처리 buffer는 state에 포함. 자세한 동작은 [`./02-checkpoint-barrier.md`](./) (예정).
+A. backpressure 시 input의 buffer가 차서 alignment에 오래 걸리는 문제 해결 — barrier가 채널의 buffer를 "추월"해 즉시 forward, 미처리 buffer는 state에 포함. 자세한 동작은 [`./02-checkpoint-barrier.md`](02-checkpoint-barrier.md).
 
 **Q6. savepoint와 checkpoint 차이?**
 A. 메커니즘은 동일 (Coordinator + barrier). 차이:
@@ -471,10 +471,10 @@ A. 2PC 패턴의 commit phase. Kafka offset commit, Iceberg metadata commit 등 
 
 ## 10. 다음에 읽을 문서
 
-- Checkpoint barrier alignment 메커니즘 + unaligned checkpoint: [`./02-checkpoint-barrier.md`](./) (예정)
-- State backend 비교 (HashMap, RocksDB, ForSt): [`./03-state-backend-overview.md`](./) (예정)
-- RocksDB state backend 운영 깊이: [`./04-rocksdb-state-backend.md`](./) (예정)
-- ForSt PoC 가이드: [`./05-forst-poc-guide.md`](./) (예정)
-- State V2 async API: [`./06-state-v2-async-api.md`](./) (예정)
+- Checkpoint barrier alignment 메커니즘 + unaligned checkpoint: [`./02-checkpoint-barrier.md`](02-checkpoint-barrier.md)
+- State backend 비교 (HashMap, RocksDB, ForSt): [`./03-state-backend-overview.md`](03-state-backend-overview.md)
+- RocksDB state backend 운영 깊이: [`./04-rocksdb-state-backend.md`](04-rocksdb-state-backend.md)
+- ForSt PoC 가이드: [`./05-forst-poc-guide.md`](05-forst-poc-guide.md)
+- State V2 async API: [`./06-state-v2-async-api.md`](06-state-v2-async-api.md)
 - FileSystem 추상 + S3 RecoverableWriter: [`../07-filesystem-checkpoint-store/`](../07-filesystem-checkpoint-store/) (예정)
 - Sink V2 2PC commit (Iceberg 매핑): [`../06-source-sink-spi/two-phase-commit.md`](../06-source-sink-spi/) (예정)
