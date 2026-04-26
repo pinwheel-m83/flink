@@ -57,12 +57,12 @@ JDK 표준의 **Service Provider Interface** 로딩 메커니즘. JAR 안의 `ME
 ```mermaid
 sequenceDiagram
     autonumber
-    participant User as 사용자 main()
+    participant User as "사용자 main()"
     participant SEE as StreamExecutionEnvironment
     participant SPI as DefaultExecutorServiceLoader
     participant Factory as PipelineExecutorFactory
-    participant Exec as PipelineExecutor (구현체)
-    participant Cluster as Cluster (Dispatcher / REST)
+    participant Exec as "PipelineExecutor (구현체)"
+    participant Cluster as "Cluster (Dispatcher / REST)"
 
     User->>SEE: env.execute("jobName")
     SEE->>SEE: getStreamGraph() — Transformation→StreamGraph 변환<br/>(03-graph-transformation 문서로 위임)
@@ -77,7 +77,7 @@ sequenceDiagram
     SEE->>Exec: execute(streamGraph, config, userClassloader)
     Exec->>Cluster: submitJob(streamGraph) (REST or DispatcherGateway)
     Cluster-->>Exec: JobID 응답
-    Exec-->>SEE: CompletableFuture<JobClient>
+    Exec-->>SEE: CompletableFuture&lt;JobClient&gt;
     SEE->>SEE: future.get() → JobClient
     alt configuration.ATTACHED == true
         SEE->>SEE: jobClient.getJobExecutionResult().get() (block)

@@ -55,8 +55,8 @@ sequenceDiagram
     autonumber
     participant Disp as Dispatcher
     participant JMR as JobManagerRunner
-    participant JM as JobMaster (mainThread)
-    participant Sched as SchedulerNG (Adaptive)
+    participant JM as "JobMaster (mainThread)"
+    participant Sched as "SchedulerNG (Adaptive)"
     participant RM as ResourceManager
     participant TM as TaskExecutor
     participant Coord as CheckpointCoordinator

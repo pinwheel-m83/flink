@@ -48,10 +48,10 @@
 ```mermaid
 sequenceDiagram
     autonumber
-    participant Client as Client (RemoteExecutor / EmbeddedExecutor)
+    participant Client as "Client (RemoteExecutor / EmbeddedExecutor)"
     participant REST as REST endpoint
-    participant Disp as Dispatcher (mainThread)
-    participant Store as ExecutionPlanWriter (HA: K8s ConfigMap)
+    participant Disp as "Dispatcher (mainThread)"
+    participant Store as "ExecutionPlanWriter (HA: K8s ConfigMap)"
     participant JMR as JobManagerRunner
     participant JM as JobMaster
 

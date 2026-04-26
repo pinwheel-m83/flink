@@ -57,9 +57,9 @@ ConfigMaps:
 
 ```mermaid
 sequenceDiagram
-    participant JM1 as JM Pod #1 (현재 leader)
-    participant CM as ConfigMap (lease)
-    participant JM2 as JM Pod #2 (standby)
+    participant JM1 as "JM Pod #1 (현재 leader)"
+    participant CM as "ConfigMap (lease)"
+    participant JM2 as "JM Pod #2 (standby)"
     
     JM1->>CM: 매 N초마다 lease renew (annotation 갱신)
     Note over JM2: 같은 ConfigMap watch

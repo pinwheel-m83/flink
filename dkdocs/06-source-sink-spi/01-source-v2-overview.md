@@ -74,10 +74,10 @@ public interface Source<T, SplitT extends SourceSplit, EnumChkT>
 ```mermaid
 sequenceDiagram
     participant JM as JobMaster
-    participant Coord as SourceCoordinator (KafkaSplitEnumerator host)
+    participant Coord as "SourceCoordinator (KafkaSplitEnumerator host)"
     participant Enum as KafkaSplitEnumerator
     participant TM as TM
-    participant Op as SourceOperator (in StreamTask mailbox)
+    participant Op as "SourceOperator (in StreamTask mailbox)"
     participant Reader as KafkaSourceReader
     participant Kafka as Kafka
 

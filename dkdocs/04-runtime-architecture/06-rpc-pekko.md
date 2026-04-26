@@ -55,8 +55,8 @@ gateway.someRemoteCall(arg)
 
 ```mermaid
 sequenceDiagram
-    participant Caller as Caller (다른 endpoint 또는 client)
-    participant Gateway as Gateway (Java proxy)
+    participant Caller as "Caller (다른 endpoint 또는 client)"
+    participant Gateway as "Gateway (Java proxy)"
     participant Net as Pekko remoting
     participant Actor as PekkoRpcActor
     participant MTE as MainThreadExecutor
@@ -69,11 +69,11 @@ sequenceDiagram
     Actor->>Actor: fencing token 검증 (FencedRpcEndpoint면)
     Actor->>MTE: invoke method on main thread
     MTE->>Endpoint: handler 실행
-    Endpoint-->>MTE: CompletableFuture<Result> 반환
+    Endpoint-->>MTE: CompletableFuture&lt;Result&gt; 반환
     MTE-->>Actor: future complete 시 reply
     Actor->>Net: 결과 직렬화 → Pekko reply
     Net->>Gateway: future complete
-    Gateway-->>Caller: CompletableFuture<Result>
+    Gateway-->>Caller: CompletableFuture&lt;Result&gt;
 ```
 
 ---

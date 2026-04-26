@@ -48,12 +48,12 @@
 ```mermaid
 sequenceDiagram
     autonumber
-    participant TM as TaskManagerRunner (process bootstrap)
-    participant TE as TaskExecutor (RPC main thread)
+    participant TM as "TaskManagerRunner (process bootstrap)"
+    participant TE as "TaskExecutor (RPC main thread)"
     participant RM as ResourceManager
     participant JM as JobMaster
     participant Slot as TaskSlotTable
-    participant Task as Task (dedicated thread)
+    participant Task as "Task (dedicated thread)"
 
     TM->>TE: 부팅 + onStart
     TE->>RM: connectToResourceManager → registerTaskExecutor

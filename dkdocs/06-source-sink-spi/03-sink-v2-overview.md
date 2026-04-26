@@ -52,15 +52,15 @@ sequenceDiagram
     participant Op as Sink Writer Op
     participant Writer as CommittingSinkWriter
     participant Coord as JM CheckpointCoordinator
-    participant Committer as Committer (downstream)
-    participant Ext as External (Iceberg / Kafka)
+    participant Committer as "Committer (downstream)"
+    participant Ext as "External (Iceberg / Kafka)"
 
     Op->>Writer: write(record1), write(record2), ...
     Writer->>Writer: buffer 누적 (또는 part file에 기록)
     
     Note over Op: checkpoint barrier 도달
     Op->>Writer: prepareCommit()
-    Writer-->>Op: Collection<CommT> committables
+    Writer-->>Op: Collection&lt;CommT&gt; committables
     Note over Op: committables를 downstream Committer operator로 emit
     Op->>Coord: acknowledgeCheckpoint (state + committables)
     

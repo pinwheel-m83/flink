@@ -54,8 +54,8 @@ K8s API와 통신하는 표준 Java 라이브러리. `KubernetesResourceManagerD
 ```mermaid
 sequenceDiagram
     autonumber
-    participant JM as JobMaster (잡당)
-    participant RM as ResourceManager (클러스터당)
+    participant JM as "JobMaster (잡당)"
+    participant RM as "ResourceManager (클러스터당)"
     participant SM as SlotManager
     participant Drv as KubernetesResourceManagerDriver
     participant K8s as Kubernetes API
@@ -69,7 +69,7 @@ sequenceDiagram
         RM->>Drv: requestResource(taskExecutorProcessSpec)
         Drv->>K8s: createPod (fabric8 client)
         K8s-->>Drv: Pod 생성 ack
-        Drv-->>RM: CompletableFuture<KubernetesWorkerNode>
+        Drv-->>RM: CompletableFuture&lt;KubernetesWorkerNode&gt;
     end
     Note over TM: Pod 부팅 → flink-conf.yaml 로드 → TaskExecutor 시작
     TM->>RM: registerTaskExecutor(slotReport)

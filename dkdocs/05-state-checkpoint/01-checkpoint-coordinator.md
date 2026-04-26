@@ -50,12 +50,12 @@
 ```mermaid
 sequenceDiagram
     autonumber
-    participant Sched as Scheduler (interval)
-    participant Coord as CheckpointCoordinator (JM)
+    participant Sched as "Scheduler (interval)"
+    participant Coord as "CheckpointCoordinator (JM)"
     participant Source as Source TaskExecutor
     participant Op as 중간 operator TaskExecutor
     participant Sink as Sink TaskExecutor
-    participant Store as CheckpointStorage (MinIO)
+    participant Store as "CheckpointStorage (MinIO)"
 
     Sched->>Coord: triggerCheckpoint() (주기 또는 사용자 trigger)
     Coord->>Coord: checkpointIdCounter.next() → barrierId
