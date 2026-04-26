@@ -74,7 +74,13 @@ Phase D (선택):  Table/SQL (별도 코스, dkdocs 외부)
 
 ## 진행 상황
 
-- [x] Phase 0: 골격 셋업
-- [ ] Phase A: 토대 (02-04)
-- [ ] Phase B: 환경 직결 (05, 07, 06, 08, 09)
-- [ ] Phase C: 확장 (10-13)
+- [x] Phase 0: 골격 셋업 — `00-overview/` (architecture-snapshot, module-map, my-environment-map) + `_template.md` + 본 README
+- [x] Phase A: 토대 (02-04) — 11 문서 (`02-job-fundamentals/`, `03-graph-transformation/`, `04-runtime-architecture/`)
+- [x] Phase B: 환경 직결 (05, 07, 06, 08, 09) — 30 문서
+- [x] Phase C: 확장 (10-13) — 13 문서
+- [x] 99-external-references — 5 문서 (Iceberg/Polaris/Operator/Kafka 진입점 매핑)
+- [ ] 01-java-prerequisites — 의도적 미작성. Java 사전지식은 본문 인라인으로 짧게 처리됨 (`CompletableFuture`, `ServiceLoader`, `ClassLoader`, `IdentityHashMap` 등). 별도 deep-dive 필요 시 후속 작성.
+
+**현재 합계**: 66 문서, 약 10,700 라인 (2026-04-26 기준).
+
+> 후속 작업 후보: ① Java prerequisites deep-dive, ② 컨트리뷰터 트랙(starter issue + FLIP bibliography 큐레이션), ③ 본인 환경 잡 실측 데이터로 각 문서 검증/보강.
