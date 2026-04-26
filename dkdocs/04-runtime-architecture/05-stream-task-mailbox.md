@@ -58,8 +58,8 @@ flowchart TD
     OpenChain[OperatorChain.initializeStateAndOpenOperators]
     Loop["MailboxProcessor.runMailboxLoop"]
     HasMail{hasMail?}
-    DefaultAct[default action — record processing<br/>StreamInputProcessor.processInput]
-    ProcessMail[mail 처리<br/>checkpoint trigger / timer / async result]
+    DefaultAct["default action — record processing<br/>StreamInputProcessor.processInput"]
+    ProcessMail["mail 처리<br/>checkpoint trigger / timer / async result"]
     AfterInvoke[afterInvoke — operator close 등]
 
     Start --> Invoke --> Restore --> OpenChain --> Loop

@@ -29,12 +29,12 @@
 ```mermaid
 flowchart TD
     Rec[record arrives]
-    Assign[WindowAssigner.assignWindows record, ts]
+    Assign["WindowAssigner.assignWindows record, ts"]
     State["각 assigned window의 state에 record 추가"]
-    Trig[Trigger.onElement → TriggerResult]
+    Trig["Trigger.onElement → TriggerResult"]
     Decide{result?}
-    Fire[FIRE: WindowFunction 호출]
-    Purge[PURGE: window state 삭제]
+    Fire["FIRE: WindowFunction 호출"]
+    Purge["PURGE: window state 삭제"]
     Reg["timer 등록 onProcessingTime/onEventTime"]
     
     Rec --> Assign --> State --> Trig --> Decide

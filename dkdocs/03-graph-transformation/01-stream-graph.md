@@ -84,9 +84,9 @@ flowchart LR
         T1 --> T2 --> T3 --> T4 --> T5
     end
     subgraph SGG["StreamGraphGenerator.generate()"]
-        G1[for each transformation:<br/>transform tx]
+        G1["for each transformation:<br/>transform tx"]
         G2["transform tx<br/>translator = translatorMap.get(tx.getClass())<br/>translator.translateForStreaming(tx, ctx)"]
-        G3[ctx.getStreamGraph().addOperator..<br/>ctx.getStreamGraph().addEdge..]
+        G3["ctx.getStreamGraph().addOperator..<br/>ctx.getStreamGraph().addEdge.."]
     end
     subgraph SG["StreamGraph DAG (output)"]
         N1[StreamNode source]
