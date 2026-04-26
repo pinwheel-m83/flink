@@ -77,7 +77,7 @@ sequenceDiagram
     SEE->>Exec: execute(streamGraph, config, userClassloader)
     Exec->>Cluster: submitJob(streamGraph) (REST or DispatcherGateway)
     Cluster-->>Exec: JobID 응답
-    Exec-->>SEE: CompletableFuture&lt;JobClient&gt;
+    Exec-->>SEE: CompletableFuture<JobClient>
     SEE->>SEE: future.get() → JobClient
     alt configuration.ATTACHED == true
         SEE->>SEE: jobClient.getJobExecutionResult().get() (block)

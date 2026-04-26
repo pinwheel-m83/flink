@@ -69,7 +69,7 @@ sequenceDiagram
         RM->>Drv: requestResource(taskExecutorProcessSpec)
         Drv->>K8s: createPod (fabric8 client)
         K8s-->>Drv: Pod 생성 ack
-        Drv-->>RM: CompletableFuture&lt;KubernetesWorkerNode&gt;
+        Drv-->>RM: CompletableFuture<KubernetesWorkerNode>
     end
     Note over TM: Pod 부팅 → flink-conf.yaml 로드 → TaskExecutor 시작
     TM->>RM: registerTaskExecutor(slotReport)

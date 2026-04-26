@@ -60,7 +60,7 @@ sequenceDiagram
     
     Note over Op: checkpoint barrier 도달
     Op->>Writer: prepareCommit()
-    Writer-->>Op: Collection&lt;CommT&gt; committables
+    Writer-->>Op: Collection<CommT> committables
     Note over Op: committables를 downstream Committer operator로 emit
     Op->>Coord: acknowledgeCheckpoint (state + committables)
     
